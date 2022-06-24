@@ -7,6 +7,7 @@ class User < ApplicationRecord
   # アソシエーション
   has_many :post_images, dependent: :destroy
   has_many :post_comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   # ActiveStorageの設定
   has_one_attached :profile_image
