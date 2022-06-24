@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  # ログインしていないとトップページ以外にアクセスできない権限制限
+  before_action :authenticate_user!, except: [:top]
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
